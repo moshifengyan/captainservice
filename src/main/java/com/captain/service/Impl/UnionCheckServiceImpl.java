@@ -48,11 +48,7 @@ public class UnionCheckServiceImpl implements UnionCheckService {
         memberNum[0]=offical;//正式成员数量
         memberNum[1]=needCon;//待审核成员数量
         memberNum[2]=offical+needCon;//所有成员数量
-        int a =4;//ceshi
         return memberNum;
-
-
-
     }
 //    @Override
 //    public List<NeedCheck> needCheck(Integer unionId){
