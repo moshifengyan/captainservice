@@ -74,8 +74,6 @@ public class UserServiceImp implements UserService {
                 if(agent1!=null)
                     result.setAgentmobile(agent1.getMobile());
                 list2.add(result);
-
-                
             }
         }
         return new JsonResult(1,"ok",list2);
