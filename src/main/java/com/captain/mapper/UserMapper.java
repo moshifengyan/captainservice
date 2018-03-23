@@ -93,4 +93,5 @@ public interface UserMapper {
      * @mbg.generated Mon Mar 12 11:32:55 CST 2018
      */
     int updateByPrimaryKey(User record);
+
 }
