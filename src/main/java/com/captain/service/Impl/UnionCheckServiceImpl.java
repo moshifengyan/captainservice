@@ -2,9 +2,8 @@ package com.captain.service.Impl;
 
 import com.captain.entity.gen.Union;
 import com.captain.entity.gen.UnionMemberExample;
-import com.captain.entity.show.NeedCheck;
-import com.captain.mapper.UnionMapper;
-import com.captain.mapper.UnionMemberMapper;
+import com.captain.mapper.special.UnionMapper;
+import com.captain.mapper.special.UnionMemberMapper;
 import com.captain.service.UnionCheckService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

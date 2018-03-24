@@ -1,9 +1,10 @@
-package com.captain.mapper;
+package com.captain.mapper.special;
 
 import com.captain.entity.gen.Union;
 import com.captain.entity.gen.UnionExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface UnionMapper {
     /**

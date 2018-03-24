@@ -1,4 +1,4 @@
-package com.captain.mapper;
+package com.captain.mapper.eep;
 
 import com.captain.entity.gen.User;
 import com.captain.entity.gen.UserExample;

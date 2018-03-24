@@ -1,6 +1,5 @@
-package com.captain.mapper;
+package com.captain.mapper.special;
 
-import com.captain.entity.gen.Union;
 import com.captain.entity.gen.UnionMember;
 import com.captain.entity.gen.UnionMemberExample;
 import java.util.List;

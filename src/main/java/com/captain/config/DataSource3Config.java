@@ -23,29 +23,30 @@ import javax.sql.DataSource;
  */
 
 @Configuration
-@MapperScan(basePackages = DataSource1Config.PACKAGE,sqlSessionFactoryRef ="db1SqlSessionFactory")
-public class DataSource1Config {
+@MapperScan(basePackages = DataSource3Config.PACKAGE,sqlSessionFactoryRef ="db3SqlSessionFactory")
+public class DataSource3Config {
 
 
-    public static final String PACKAGE = "com.captain.mapper.special";
+    public static final String PACKAGE = "com.captain.mapper.eep";
 
-    public static final String MAPPER_LOCATION = "classpath:mybatis/mapper/special/*.xml";
+    public static final String MAPPER_LOCATION = "classpath:mybatis/mapper/eep/*.xml";
 
-    @Value("${jdbc.database1.driverClassName}")
+    @Value("${jdbc.database3.driverClassName}")
     public String driverClassName;
 
-    @Value("${jdbc.database1.url}")
+    @Value("${jdbc.database3.url}")
     public String url;
 
-    @Value("${jdbc.database1.username}")
+    @Value("${jdbc.database3.username}")
     public String username;
 
-    @Value("${jdbc.database1.password}")
+    @Value("${jdbc.database3.password}")
     public String password;
 
     //初始化数据库连接
-    @Bean("db1DataSource")
-    public DataSource db1DataSource(){
+    @Primary
+    @Bean("db3DataSource")
+    public DataSource db3DataSource(){
         DruidDataSource dataSource = new DruidDataSource();
         dataSource.setDbType("com.alibaba.druid.pool.DruidDataSource");
         dataSource.setDriverClassName(driverClassName);
@@ -56,19 +57,21 @@ public class DataSource1Config {
     }
 
     //数据源事务管理器
-    @Bean(name="db1DataSourceTransactionManager")
-    public DataSourceTransactionManager db1DataSourceTransactionManager(){
+    @Primary
+    @Bean(name="db3DataSourceTransactionManager")
+    public DataSourceTransactionManager db3DataSourceTransactionManager(){
         DataSourceTransactionManager dataSourceTransactionManager = new DataSourceTransactionManager();
-        dataSourceTransactionManager.setDataSource(db1DataSource());
+        dataSourceTransactionManager.setDataSource(db3DataSource());
         return dataSourceTransactionManager;
     }
 
     //创建Session
-    @Bean(name="db1SqlSessionFactory")
-    public SqlSessionFactory db1SqlSessionFactory(@Qualifier("db1DataSource") DataSource db1DataSource) throws Exception{
+    @Primary
+    @Bean(name="db3SqlSessionFactory")
+    public SqlSessionFactory db3SqlSessionFactory(@Qualifier("db3DataSource") DataSource db3DataSource) throws Exception{
         final SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
-        sqlSessionFactoryBean.setDataSource(db1DataSource);
-        Resource[] resource = new PathMatchingResourcePatternResolver().getResources(DataSource1Config.MAPPER_LOCATION);
+        sqlSessionFactoryBean.setDataSource(db3DataSource);
+        Resource[] resource = new PathMatchingResourcePatternResolver().getResources(DataSource3Config.MAPPER_LOCATION);
         sqlSessionFactoryBean.setMapperLocations(resource);
         return sqlSessionFactoryBean.getObject();
     }
