@@ -11,7 +11,6 @@ public class Captain {  //车队长实体信息表
     private String phone2;
     private String phone3;
     private Integer agenttjid;  //所属代理商通行证号
-    private Integer unionid;  //调度中心id
     private String companyname;
 
     public Integer getTjid() {
@@ -28,14 +27,6 @@ public class Captain {  //车队长实体信息表
 
     public void setAgenttjid(Integer agenttjid) {
         this.agenttjid = agenttjid;
-    }
-
-    public Integer getUnionid() {
-        return unionid;
-    }
-
-    public void setUnionid(Integer unionid) {
-        this.unionid = unionid;
     }
 
     public String getCompanyname() {
