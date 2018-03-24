@@ -54,7 +54,7 @@ public class CaptainController {
 
 
 
-//    @RequestMapping("/unioncheck")4
+//    @RequestMapping("/unioncheck")
 //    public JsonResult<List<CaptainUnion>> unionCheck(){
 //      return new JsonResult(unionCheckService.AllCaptainUnion());
 //    }
